@@ -15,9 +15,8 @@
 
 # Add a feed source
 #echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
-#echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
-echo 'src-git lienol https://github.com/Lienol/openwrt-package.git;main' >>feeds.conf.default
-echo 'src-git other https://github.com/Lienol/openwrt-package.git;other' >>feeds.conf.default
-echo 'src-git PWpackages https://github.com/xiaorouji/openwrt-passwall.git;packages' >>feeds.conf.default
-#src-git PWluci https://github.com/xiaorouji/openwrt-passwall.git;luci  //如果是编译passwall2着不需要否则会加载重复软件包
-echo 'src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2.git' >>feeds.conf.default
+#echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default //如果是编译passwall2着不需要否则会加载重复软件包
+sed -i 'src-git lienol https://github.com/Lienol/openwrt-package.git;main' feeds.conf.default
+sed -i 'src-git other https://github.com/Lienol/openwrt-package.git;other' feeds.conf.default
+sed -i 'src-git PWpackages https://github.com/xiaorouji/openwrt-passwall.git;packages' feeds.conf.default
+sed -i 'src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2.git' feeds.conf.default
